@@ -4,6 +4,15 @@ Agencia de viagens: Fiz um site HTML e CSS de viagem para as pessoas se interess
 
 CafenoLAR: Encontre a receita perfeita! , utilizei HTML, CSS e JAVA
 
+ExpoMoto: Um evento para acelerar seu coracao , utilizei HTML , CSS , IMAGENS , Identidade Visual 
+
+LocdeVeiculos: Locadora de veiculos , utilizei PHP e CSS
+
+LocdeVeiculos2: utilizada com json e PHP
+
+
+
+
 
 
 
