@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agência de viagens</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut" href="img/icons.png" type="img">
+</head>
+<body>
+    <!-- tag semantica para cabeçalho -->
+    <header>
+        
+        <h1 id="inicio">Agência de Viagens 🛫</h1>
+        
+        <!-- tag semantica para barra de navegação -->
+         <nav>
+            <a href="#inicio">inicio</a>
+            <a href="#destinos">destinos</a>
+            <a href="#pacotes">pacotes</a>
+            <a href="#contatos">contatos</a>
+         </nav>
+    </header>
+
+    <div class="conteiner">
+        <!-- tag semantica parainformações na lateral -->
+         <!-- Destinos Populares -->
+        <anside class="sidebar">
+            <h2 class="destinos">Destino Populares</h2>
+            <ul>
+                <li><img src="img/paris.jpg" alt="Paris">Paris, FR</li>
+                <li><img src="img/ny.jpg" alt="Nova York"></li>
+                <li><img src="img/riojaneiro.jpg" alt="Rio de Janeiro">Rio de Janeiro, BR</li>
+                <li><img src="img/roma.jpg" alt="Roma">Roma, IT</li>
+                <li><img src="img/tokio.jpg" alt="Toquio">Toquio, Japão</li>
+            </ul>
+        
+
+        </anside>
+
+        <!-- tag semantica para sessões extras-->
+        <section class="main-content">
+            <h2 class="subtitlle">Encontre o seu destino</h2>
+            <form>
+                <input type="text" placeholder="Digite o seu destino" required>
+                <input type="date" required>
+                <button type="submit">Procurar</button>
+            </form>
+
+        </section>
+
+        <anside class="secondary">
+            <h2 id="pacotes ">Pacotes em Promoção></h2>
+            <ul>
+                <li><img src="img/cancun.jpg" alt="cancun">
+                <b>Praias paradisiacas!</b>
+                <br>Pacote para Cancun - 5 dias por 3x de R$2.500
+                </li>
+                <li><img src="img/londres.jpg" alt="Londres">
+                <b>Intercâmbio britânico!</b>
+                <br>Pacote para Londres - 7 dias por 2x de R$4.000
+                </li>
+                <li><img src="img/noronha.jpg" alt="Fernando de Noronha">
+                <b>Super oportunidade!</b>
+                <br>Pacote para Fernando de Noronha - 4 dias por R$3.200
+                </li>
+            </ul>
+        </anside>
+    </div>
+    <!-- Tag semântica para rodapé -->
+    <footer>
+        <p id="contatos">&copy; 2025 Agência de Viagens - Contato: contato@agênciaviagens.com</p>
+    </footer>
+</body>
+</html>
