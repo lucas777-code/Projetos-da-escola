@@ -1,0 +1,293 @@
+/* reset das configurações padrão */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* padronização de cores */
+html {
+
+    /* variáveis do css */
+    --corPrimaria:#017143;
+
+    --corSecundaria: #333;
+
+    --corTerciaria: #fff;
+}
+
+/* Container principal */
+main{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--corTerciaria);
+}
+
+/* Header (cabeçalho) */
+header{
+    position:absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo{
+    position: relative;
+    max-width: 80px;
+}
+header .logo:hover{
+    filter: invert(0.1);
+}
+header ul li{
+    list-style: none;
+}
+header ul{
+    position: relative;
+    display: flex;
+}
+header ul li a{
+    /* garante que o elemento seja renderizado
+    em linha dentro do bloco */
+    display: inline-block;
+    color: var(--corSecundaria);
+    font-size: 20px;
+    font-weight: 400;
+    margin-left: 40px;
+    text-decoration: none;
+    padding: 5px;
+}
+/* hover dos links do cabeçalho */
+header ul li a:hover{
+    background-color: var(--corPrimaria) ;
+    color: var(--corTerciaria);
+    border-radius: 7px;
+}
+
+/* conteúdo principal */
+.conteudo{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.conteudo .textoPrincipal{
+    position: relative;
+    /* limita o espaço do texto */
+    max-width: 600px;
+}
+.conteudo .textoPrincipal h2 {
+    color: var(--corSecundaria);
+    /* 1em = 1vez o tamanho da fonte do elemento */
+    /* 16px*2.5= 40px */
+    font-size: 2.5em;
+    /* espaçamento vertical da fonte */
+    line-height: 1.5em;
+    font-weight: 500;
+}
+.conteudo .textoPrincipal h2 span {
+    color: var(--corPrimaria);
+    font-size: 1.2em;
+    font-weight: 900;
+}
+.conteudo .textoPrincipal p{
+    color: var(--corSecundaria);
+}
+.conteudo .textoPrincipal a{
+    display: inline-block;
+    margin-top: 20px; 
+    padding: 8px 20px;
+    background-color: var(--corPrimaria);
+    color: var(--corTerciaria);
+    text-decoration: none;
+    border-radius: 40px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+.conteudo .textoPrincipal a:hover{
+    background-color: var(--corSecundaria);
+    color: var(--corTerciaria);
+    border-radius: 40px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+/* imagem do copo grande 🍦 */
+.conteudo .imgBox{
+    width: 600px;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 50px;
+    margin-top: 50px;
+}
+.conteudo .imgBox img{
+    max-width: 340px;
+}
+
+/* copos menores 🍦 */
+.sorvetes {
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    transform: translateX(-50%);
+    display: flex;
+}
+.sorvetes li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.sorvetes li:hover {
+    transform: translateY(-15px);
+}
+.sorvetes li img{
+    max-width: 60px;
+}
+
+/* redes sociais */
+.sociais{
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.sociais li {
+    list-style: none;
+}
+#threads{
+    height: 40px;
+}
+.sociais li a{
+    display:inline-block;
+    margin: 5px 0;
+    /* altera a escala de tamanho */
+    transform: scale(0.6);
+    /* inverte a cor para branco */
+    filter: invert(1);
+}
+.sociais li a:hover{
+    color: var(--corSecundaria);
+    filter: invert(0);
+}
+
+/* circulo */
+.circulo{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height:100%;
+    background: var(--corPrimaria);
+
+    /* tamanho --> lado --> posição */
+    clip-path: circle(600px at right 800px);
+}
+
+/* ******Responsividade******** */
+@media (max-width: 992px){
+    header{
+        padding: 20px;
+    }
+    header .logo{
+        max-width: 60px;
+    }
+    header ul{
+        /* oculta a exibição da lista */
+        display: none;
+    }
+
+    /* menu hambúrguer */
+    .toggle{
+        position: relative;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        /* preenchido com a imagem do menu hambúrguer */
+        background: url(assets/menu.png);
+        background-size: 30px;
+        background-position: center;
+        background-repeat: no-repeat;
+        filter: invert(1);
+        z-index: 11;
+    }    
+    .toggle.active{
+        position: fixed;
+        right: 20px;
+        /* preenchido com a imagem de 'fechar' */
+        background: url(assets/close.png);
+        background-size: 25px;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    /* formar a lista do menu hamburguer */
+    header ul.links.active {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 45%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #f2f2f2;
+        z-index: 10;
+    }
+    header ul li a {
+        font-size: 1.5em;
+        margin: 5px 0;
+    }
+
+    /* Conteúdo */
+    main {
+        padding: 20px 20px 120px;
+    }
+
+    .conteudo {
+        flex-direction: column; /* Joga o conteudo em coluna (Blocos) */
+        margin-top: 100px;
+    }
+
+    .conteudo .textoPrincipal h2 {
+        font-size: 2.5em;
+        margin-bottom: 15px;
+    }    
+    .conteudo .textoPrincipal {
+        max-width: 100%;
+    }    
+    .conteudo .imgBox {
+        max-width: 300px;
+
+    }    
+    .thumb li img {
+        max-width: 40px;
+    }
+    .circulo {
+        clip-path: circle(400px at center bottom);
+    }
+    .sociais {
+        /* Estiliza os sociais */
+        /* background: #017143; */
+        background: var(--corPrimaria);
+        right: 0;
+        width: 50px;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+    }
+}
