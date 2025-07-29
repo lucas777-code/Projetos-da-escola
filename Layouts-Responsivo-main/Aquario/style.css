@@ -1,0 +1,215 @@
+/* reset das configurações */
+body, ul, li, p {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 1.2rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body{
+    margin-bottom: 100px;
+    background-color: #dee5ef;
+}
+
+/* Retirar o sublinhado dos links */
+header a{
+    text-decoration: none;
+    color: #fff;
+}
+
+header a:hover{
+    background-color: #8cb9f8;
+    border-radius: 5px;
+    padding: 7px;
+}
+
+header{
+    background: #4169e1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+    /* Alinha no centro vertical */
+    align-items: center;
+    position: fixed;
+    top:0;
+    width: 100%;
+}
+
+.lista{
+    display: flex;
+}
+.lista li{
+    margin-left: 10px;
+    margin-right: 50px;
+}
+
+h1 {
+    margin-top: 100px;
+    text-align: center;
+}
+
+img{
+    max-width: 100%;
+    display: block;
+}
+
+/* Flexbox 1 */
+.flex{
+    /* itens lado a lado */
+    display: flex;
+    /* quebrar a linha */
+    flex-wrap: wrap;
+    /* limitar o tamanho do container */
+    max-width: 800px;
+    /* alinhar o container para o centro da tela */
+    margin: 0 auto;
+}
+
+.flex > div {
+    /* limita em 200px */
+    flex: 1 1 200px;
+    /* gap entre os itens */
+    margin: 10px;
+}
+
+/* GRID 1 */
+
+.grid1 {
+    /* altera o tipo de display */
+    display: grid;
+    /* repete 3x a coluna 'fração' (30%) */
+    grid-template-columns: repeat(3, 1fr);
+    /* limita o tamanho do container */
+    max-width: 800px;
+    padding: 10px;
+    /* alinha o container ao centro caso a tela seja maior que 800px */
+    margin: 0 auto;
+    /* gap entre itens */
+    grid-gap: 20px;
+}
+
+/* 'filhos' dentro da div, a partir do 4º item */
+.grid1 > div:nth-child(n + 4) {
+    /* inicia outra grade */
+    display: grid;
+    /* limita em duas fraçoes */
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    /* alinha o texto com a imagem */
+    align-items: center;
+}
+  
+.grid1 > div.anuncio {
+    /* prende o item na coluna 1 */
+    grid-column: 1;
+    /* o item ocupa da linha 2 até a linha 5 */
+    grid-row: 2 / 5;
+    border-top: 10px solid #00ff00;
+    /* volta ao tamanho da imagem */
+    display: block;
+}
+  
+/* todos os itens que estiverem abaixo de 600px */
+@media (max-width: 600px) {
+    .grid1 {
+        /* passa a ter duas colunas */
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .grid1 > div:nth-child(n + 4) {
+        /* volta a disposição dos itens ao convencional, no mobile */
+        display: block;
+    }
+    .grid1 > div.anuncio {
+        /* volta o anuncio pra coluna e linha convencional */
+        grid-column: auto;
+        grid-row: auto;
+        /* define como primeiro item a aparecer */
+        order: -1;
+    }
+}
+
+/* Grid 2 - Colunas e navegação horizontal */
+
+.grid2 {
+    /* altera o tipo de display */
+    display: grid;
+    /* coluna lateral fixada em 200px */
+    grid-template-columns: 1fr 200px;
+    grid-gap: 20px;
+    /* limita o tamanho do container */
+    max-width: 800px;
+    /* margem */
+    padding: 10px;
+    /* alinha o container ao centro caso a tela seja maior que 800px */
+    margin: 0 auto;
+}
+  
+.sidebar > div {
+    margin-bottom: 10px;
+}
+  
+@media (max-width: 600px) {
+    .grid2 {
+    /* coloca tudo em uma coluna */
+      grid-template-columns: 1fr;
+    }
+    .sidebar {
+        /* deixa os itens lado a lado */
+      display: flex;
+      /* insere a navegação nas imagens */
+      overflow: scroll;
+    }
+    .sidebar > div {
+        /* não diminui o valor dos itens, mantem 200px */
+      flex: 1 0 200px;
+      margin: 0 10px;
+    }
+}
+
+/* GRID 3 - coluna  */
+
+.grid3 {
+    /* altera o tipo de display */
+    display: grid;
+    /* divide duas colunas */
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    /* centraliza o container */
+    margin: 0 auto;
+    /* limita o container */
+    max-width: 800px;
+    /* borda de preenchimento */
+    padding: 10px;
+}
+  
+.grid3-item:nth-child(1) {
+    /* ocupa da linha 1 até a 3 */
+    grid-column: 1 / 3;
+    /* height: 45vh;
+    order: -1; */
+    
+}
+
+.grid3-item {
+    display: grid;
+}
+  
+.grid3-item img {
+    grid-column: 1;
+    /* a imagem ocupa da linha 1 até a linha 3 */
+    grid-row: 1/3;
+    align-self: end;
+}
+  
+.grid3-item p {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    color: white;
+    grid-column: 1;
+    /* o texto ocupa a linha 2 */
+    grid-row: 2;
+    /* para o texto acompanhar a borda da imagem */
+    align-self: end;
+}
